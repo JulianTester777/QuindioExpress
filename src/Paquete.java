@@ -8,7 +8,7 @@ public class Paquete implements Comparable<Paquete>{
     private int prioridad;
     private int tiempoEstimado;
 
-    public Paquete(String codigo,Municipio municipio, double peso, int prioridad,
+    public Paquete(String codigo,Municipio destino, double peso, int prioridad,
                    int tiempoEstimado){
         this.codigo = codigo;
         this.destino = destino;

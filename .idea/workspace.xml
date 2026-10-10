@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45919d7e-f870-4e41-be50-6f9a4e189200" name="Changes" comment="Creacion de los metodos basicos de la lista enlazada propia y el iterador propio">
+    <list default="true" id="45919d7e-f870-4e41-be50-6f9a4e189200" name="Changes" comment="Test Metodos&#10;test: prueba correcta de metodos de la lista &#10;creada propia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IColeccion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IColeccion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ListaEnlazadaPropia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ListaEnlazadaPropia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuindioExpress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuindioExpress.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +107,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1791655533569</updated>
-      <workItem from="1791655538251" duration="8419000" />
+      <workItem from="1791655538251" duration="10630000" />
     </task>
     <task id="LOCAL-00003" summary="Creacion de los metodos basicos de la lista enlazada propia y el iterador propio">
       <option name="closed" value="true" />
@@ -119,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1791662603390</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Test Metodos&#10;test: prueba correcta de metodos de la lista &#10;creada propia">
+      <option name="closed" value="true" />
+      <created>1791664156812</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1791664156812</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,21 +135,7 @@
     <MESSAGE value="Modificacion de la clase nodo, poniendola estatica privada dentro de la lista simple propia para conseguir q el funcionamiento no sea visto por las demas clases" />
     <MESSAGE value="Creacion de una clase criteriospaquete para &#10;ser mas ordenado en cuanto al manejo de criterios al momento de organizar informacion relacionada a paquetes" />
     <MESSAGE value="Creacion de los metodos basicos de la lista enlazada propia y el iterador propio" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creacion de los metodos basicos de la lista enlazada propia y el iterador propio" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>1</line>
-          <properties class="Main" method="main">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Test Metodos&#10;test: prueba correcta de metodos de la lista &#10;creada propia" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test Metodos&#10;test: prueba correcta de metodos de la lista &#10;creada propia" />
   </component>
 </project>

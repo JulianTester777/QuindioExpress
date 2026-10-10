@@ -22,46 +22,52 @@ public class QuindioExpress {
     private final Map<String, Paquete> porCodigo = new HashMap<>();
 
     //Necesidad 3: Municipios sin duplicados
-    private final Set<String> municipios = new HashSet<>();
+    private final Set<Municipio> municipios = new HashSet<>();
 
     //Necesidad 4: Municipios ordenados alfabeticamente, se necesita un conjunto ordenado
-    private final Set<String> municipiosOrdenados = new TreeSet<>();
+    private final Set<Municipio> municipiosOrdenados = new TreeSet<>(Comparator.comparing(Municipio::name));
 
     //Necesidad 5: Despacho por prioridad de paquetes
     private final Queue<Paquete> prioridadPaquetes = new PriorityQueue<>(CriteriosPaquete.DESPACHO);
 
-    //Necesidad 6: Historial de entregas con lista propia
-    private final ListaEnlazadaPropia<Paquete> historialEntregas = new ListaEnlazadaPropia<>();
+    //Necesidad 6: Historial de paquetes entregados, en orden de entrega (usa la lista propia)
+    private final HistorialPaquete historialPaquete = new HistorialPaquete();
+
+    //Agrupación de paquetes por destino
+    private final Map<Municipio, List<Paquete>> porMunicipio = new HashMap<>();
 
     //Repartidores
     private final Map<String, Repartidor> repartidores = new HashMap<>();
 
 
     //Registro de paquetes
-    public void RegistrarPaquete(Paquete p ){
-
-        if(porCodigo.containsKey(p.getCodigo())){
+    public void registrarPaquete(Paquete p) {
+        if (p == null) {
+            throw new IllegalArgumentException("El paquete no puede ser nulo");
+        }
+        if (porCodigo.containsKey(p.getCodigo())) {
             throw new IllegalArgumentException("El paquete con codigo " + p.getCodigo() + " ya existe");
         }
 
         porCodigo.put(p.getCodigo(), p);
-        ordenRegistro.add(p);  //Conserva orden de llegada
-        municipios.add(p.getDestino().name()); //Sin duplicados
-        municipiosOrdenados.add(p.getDestino().name());  //Orden alfabetico
-        prioridadPaquetes.offer(p); //Despacho prioritario
+        ordenRegistro.add(p);                       // conserva orden de llegada
+        municipios.add(p.getDestino());             // sin duplicados
+        municipiosOrdenados.add(p.getDestino());    // orden alfabético
+        porMunicipio.computeIfAbsent(p.getDestino(), k -> new ArrayList<>()).add(p);
+        prioridadPaquetes.offer(p);                 // despacho prioritario
     }
 
     //Municipios con 1 paquete
-    public Set<String> determinarMunicipiosCon1PaqueteRegistrado(){
-        return municipios;
+    public Set<Municipio> determinarMunicipiosCon1PaqueteRegistrado(){
+        if()
     }
     //Atender paquete por prioridad
     public Paquete atenderPaquetePrioridad(){
         return prioridadPaquetes.poll();
     }
     //Municipios con paquetes asignados
-    public Set<String> consultarMunicipiosConPaqueteAsignado(){
-        return municipios;
+    public Set<Municipio> consultarMunicipiosConPaqueteAsignado(){
+        return Set.of(Municipio.values());
     }
     //Ordenar paquetes por codigo
     public List<Paquete> ordenarCodigosPaquete() {

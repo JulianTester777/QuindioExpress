@@ -22,7 +22,7 @@ public class ListaEnlazadaPropia<T> implements IColeccion<T>, Iterable<T>{
     //-------------------Clase IteradorLista ---------------------------------
     private class IteradorLista implements Iterator<T>{
         private Nodo<T> siguiente = cabeza;
-        private Nodo<T> ultimo = null; //el que devolverá next
+        private Nodo<T> ultimo = null;
         private Nodo<T> anterior = null; // el ultimo que devolvio next
         private boolean puedeEliminar = false; // el previo a ultimo
 
@@ -88,22 +88,12 @@ public class ListaEnlazadaPropia<T> implements IColeccion<T>, Iterable<T>{
     }
 
     @Override
-    public void eliminar(T elemento) {
+    public boolean eliminar(T elemento) {
         IteradorLista it = new IteradorLista();
         while(it.hasNext()) {
-            if (contiene(elemento)) {
+            if (Objects.equals(it.next(),elemento)) {
                 it.remove(); //borra el que next aca de devolver
-                return;     //solo la primera coincidencia
-            }
-        }
-    }
-
-    @Override
-    public boolean contiene(T elemento) {
-        IteradorLista it = new IteradorLista();
-        while(it.hasNext()){
-            if (Objects.equals(it.next(), elemento)){
-                return true;
+                return true;     //solo la primera coincidencia
             }
         }
         return false;
@@ -111,7 +101,7 @@ public class ListaEnlazadaPropia<T> implements IColeccion<T>, Iterable<T>{
 
     @Override
     public int tamano() {
-        return 0;
+        return tamano;
     }
 
     @Override
@@ -119,6 +109,17 @@ public class ListaEnlazadaPropia<T> implements IColeccion<T>, Iterable<T>{
         return tamano == 0;
     }
 
+    @Override
+    public T obtener(int posicion) {
+        if (posicion < 0 || posicion >= tamano) {
+            throw new IndexOutOfBoundsException("Posición inválida: " + posicion);
+        }
+        Nodo<T> actual = cabeza;
+        for (int i = 0; i < posicion; i++) {
+            actual = actual.siguiente;
+        }
+        return actual.dato;
+    }
 
 
 

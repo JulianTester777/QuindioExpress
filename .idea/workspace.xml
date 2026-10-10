@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45919d7e-f870-4e41-be50-6f9a4e189200" name="Changes" comment="Creacion de una clase criteriospaquete para &#10;ser mas ordenado en cuanto al manejo de criterios al momento de organizar informacion relacionada a paquetes">
+    <list default="true" id="45919d7e-f870-4e41-be50-6f9a4e189200" name="Changes" comment="Creacion de los metodos basicos de la lista enlazada propia y el iterador propio">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HistorialPaquete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HistorialPaquete.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/IColeccion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IColeccion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ListaEnlazadaPropia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ListaEnlazadaPropia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +50,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
@@ -63,6 +64,20 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="QuindioExpress" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -94,9 +109,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1791655533569</updated>
-      <workItem from="1791655538251" duration="6849000" />
+      <workItem from="1791655538251" duration="8419000" />
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Creacion de los metodos basicos de la lista enlazada propia y el iterador propio">
+      <option name="closed" value="true" />
+      <created>1791662603390</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1791662603390</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,6 +128,22 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Modificacion de la clase nodo, poniendola estatica privada dentro de la lista simple propia para conseguir q el funcionamiento no sea visto por las demas clases" />
     <MESSAGE value="Creacion de una clase criteriospaquete para &#10;ser mas ordenado en cuanto al manejo de criterios al momento de organizar informacion relacionada a paquetes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creacion de una clase criteriospaquete para &#10;ser mas ordenado en cuanto al manejo de criterios al momento de organizar informacion relacionada a paquetes" />
+    <MESSAGE value="Creacion de los metodos basicos de la lista enlazada propia y el iterador propio" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creacion de los metodos basicos de la lista enlazada propia y el iterador propio" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>1</line>
+          <properties class="Main" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

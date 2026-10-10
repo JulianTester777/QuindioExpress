@@ -1,7 +1,8 @@
 public interface IColeccion <T> {
     void agregar(T elemento);
-    void eliminar(T elemento);
-    boolean contiene(T elemento);
+    boolean eliminar(T elemento);
     int tamano();
     boolean estaVacia();
+    T obtener(int posicion);
+
 }

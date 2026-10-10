@@ -4,18 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45919d7e-f870-4e41-be50-6f9a4e189200" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/HistorialPaquete.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ListaEnlazadaPropia.java" afterDir="false" />
+    <list default="true" id="45919d7e-f870-4e41-be50-6f9a4e189200" name="Changes" comment="Modificacion de la clase nodo, poniendola estatica privada dentro de la lista simple propia para conseguir q el funcionamiento no sea visto por las demas clases">
+      <change afterPath="$PROJECT_DIR$/src/CriteriosPaquete.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ListaEnlazada.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/QuindioExpress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuindioExpress.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -30,6 +34,19 @@
   }
 }]]></component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="Modificacion de la clase nodo, poniendola estatica privada dentro de la lista simple propia para conseguir q el funcionamiento no sea visto por las demas clases">
+      <option name="closed" value="true" />
+      <created>1791610815497</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1791610815497</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Modificacion de la clase nodo, poniendola estatica privada dentro de la lista simple propia para conseguir q el funcionamiento no sea visto por las demas clases" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modificacion de la clase nodo, poniendola estatica privada dentro de la lista simple propia para conseguir q el funcionamiento no sea visto por las demas clases" />
   </component>
 </project>

@@ -28,7 +28,7 @@ public class QuindioExpress {
     private final Set<String> municipiosOrdenados = new TreeSet<>();
 
     //Necesidad 5: Despacho por prioridad de paquetes
-    private final Queue<Paquete> prioridadPaquetes = new PriorityQueue<>(Comparator.comparingInt(Paquete::getPrioridad).reversed());
+    private final Queue<Paquete> prioridadPaquetes = new PriorityQueue<>(CriteriosPaquete.DESPACHO);
 
     //Necesidad 6: Historial de entregas con lista propia
     private final ListaEnlazadaPropia<Paquete> historialEntregas = new ListaEnlazadaPropia<>();
@@ -72,13 +72,13 @@ public class QuindioExpress {
     //Organizar paquetes por prioridad descendente
     public List<Paquete> organizarPaquetesPrioridadDescendente(){
         List<Paquete> organizados = new ArrayList<>(ordenRegistro);
-        organizados.sort(Comparator.comparingInt(Paquete::getPrioridad).reversed());
+        organizados.sort(CriteriosPaquete.POR_PRIORIDAD_DESC);
         return organizados;
     }
     //Organizar paquetes por peso descendente
     public List<Paquete> organizarPaquetesPesoDescendente(){
         List<Paquete> organizados = new ArrayList<>(ordenRegistro);
-        organizados.sort(Comparator.comparingDouble(Paquete::getPeso).reversed());
+        organizados.sort(CriteriosPaquete.POR_PESO_DESC);
         return organizados;
     }
 

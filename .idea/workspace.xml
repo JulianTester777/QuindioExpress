@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d963ebd3-b2c6-460e-99fa-92284a72f655" name="Changes" comment="Creacion de la clase Repartidor con sus campos de clase y getters y setters como tambien de el metodo tostring y creacion del metodo puede recibirpaquete para validar luego si el paquete puede ser asginado o no">
-      <change afterPath="$PROJECT_DIR$/src/IColeccion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ListaEnlazada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="45919d7e-f870-4e41-be50-6f9a4e189200" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/HistorialPaquete.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ListaEnlazadaPropia.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ListaEnlazada.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/QuindioExpress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuindioExpress.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,132 +17,19 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Enum" />
-        <option value="Class" />
-        <option value="Interface" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;JohnDehiby25&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/JulianTester777/QuindioExpress.git&quot;,
-    &quot;accountId&quot;: &quot;78f52491-05d9-46f5-9d83-a162080dc77f&quot;
-  }
-}</component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
-}</component>
-  <component name="ProjectId" id="3KRD66F5amgP9Qmbic0OcatRbrd" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/dehib/OneDrive/Desktop/QuindioExpressParcial/QuindioExpress",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+    "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.25557.131" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="d963ebd3-b2c6-460e-99fa-92284a72f655" name="Changes" comment="" />
-      <created>1791573771518</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1791573771518</updated>
-      <workItem from="1791573774086" duration="7616000" />
-    </task>
-    <task id="LOCAL-00001" summary="Creacion de la clase Paquete con su comparable &#10;definiendo el orden natural por codigo, ya luego se define por fuera, cuando se compara por peso o demas características, y definicion de los campos de clase y getters y setters">
-      <option name="closed" value="true" />
-      <created>1791587860792</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1791587860792</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Creacion de la clase Repartidor con sus campos de clase y getters y setters como tambien de el metodo tostring y creacion del metodo puede recibirpaquete para validar luego si el paquete puede ser asginado o no">
-      <option name="closed" value="true" />
-      <created>1791588829247</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1791588829247</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Creacion de la clase Repartidor con sus campos de clase y getters y setters como tambien de el metodo tostring y creacion del metodo puede recibirpaquete para validar luego si el paquete puede ser asginado o no">
-      <option name="closed" value="true" />
-      <created>1791588858521</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1791588858521</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Creacion de la clase Repartidor con sus campos de clase y getters y setters como tambien de el metodo tostring y creacion del metodo puede recibirpaquete para validar luego si el paquete puede ser asginado o no">
-      <option name="closed" value="true" />
-      <created>1791588869447</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1791588869447</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Creacion de la clase Paquete con su comparable &#10;definiendo el orden natural por codigo, ya luego se define por fuera, cuando se compara por peso o demas características, y definicion de los campos de clase y getters y setters" />
-    <MESSAGE value="Creacion de la clase Repartidor con sus campos de clase y getters y setters como tambien de el metodo tostring y creacion del metodo puede recibirpaquete para validar luego si el paquete puede ser asginado o no" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creacion de la clase Repartidor con sus campos de clase y getters y setters como tambien de el metodo tostring y creacion del metodo puede recibirpaquete para validar luego si el paquete puede ser asginado o no" />
   </component>
 </project>

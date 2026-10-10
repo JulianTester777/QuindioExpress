@@ -31,7 +31,7 @@ public class QuindioExpress {
     private final Queue<Paquete> prioridadPaquetes = new PriorityQueue<>(Comparator.comparingInt(Paquete::getPrioridad).reversed());
 
     //Necesidad 6: Historial de entregas con lista propia
-    private final ListaEnlazada<Paquete> historialEntregas = new ListaEnlazada<>();
+    private final ListaEnlazadaPropia<Paquete> historialEntregas = new ListaEnlazadaPropia<>();
 
     //Repartidores
     private final Map<String, Repartidor> repartidores = new HashMap<>();

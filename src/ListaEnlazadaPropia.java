@@ -121,6 +121,4 @@ public class ListaEnlazadaPropia<T> implements IColeccion<T>, Iterable<T>{
         return actual.dato;
     }
 
-
-
 }

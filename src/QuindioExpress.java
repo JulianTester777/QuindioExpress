@@ -59,53 +59,70 @@ public class QuindioExpress {
 
     //Municipios con 1 paquete
     public Set<Municipio> determinarMunicipiosCon1PaqueteRegistrado(){
-        if()
+        return municipios;
     }
+
     //Atender paquete por prioridad
     public Paquete atenderPaquetePrioridad(){
         return prioridadPaquetes.poll();
     }
+
     //Municipios con paquetes asignados
     public Set<Municipio> consultarMunicipiosConPaqueteAsignado(){
         return Set.of(Municipio.values());
     }
+
     //Ordenar paquetes por codigo
     public List<Paquete> ordenarCodigosPaquete() {
         List<Paquete> ordenados = new ArrayList<>(ordenRegistro);
         Collections.sort(ordenados);
         return ordenados;
     }
+
     //Organizar paquetes por prioridad descendente
     public List<Paquete> organizarPaquetesPrioridadDescendente(){
         List<Paquete> organizados = new ArrayList<>(ordenRegistro);
         organizados.sort(CriteriosPaquete.POR_PRIORIDAD_DESC);
         return organizados;
     }
+
     //Organizar paquetes por peso descendente
     public List<Paquete> organizarPaquetesPesoDescendente(){
         List<Paquete> organizados = new ArrayList<>(ordenRegistro);
         organizados.sort(CriteriosPaquete.POR_PESO_DESC);
         return organizados;
     }
-
-    public void organizarPaquetesTiempoEstimado(){
-
+    //Organizar paquetes por tiempo estimado
+    public List<Paquete> organizarPaquetesTiempoEstimado(){
+        List<Paquete> organizados = new ArrayList<>(ordenRegistro);
+        organizados.sort(CriteriosPaquete.POR_TIEMPO_ASC);
+        return organizados;
+    }
+    //Consultar paquete por su codigo
+    public Paquete consultarPaquete(String id){
+        return porCodigo.get(id); //Null si no existe
+    }
+   //Registrar repartidor
+    public void registrarRepartidor(Repartidor r){
+        if (r == null) {
+            throw new IllegalArgumentException("El repartidor no puede ser nulo");
+        }
+        if (repartidores.containsKey(r.getId())) {
+            throw new IllegalArgumentException("El repartidor con id " + r.getId() + " ya existe");
+        }
+        repartidores.put(r.getId(), r);
+    }
+    //Consultar repartidor por su id
+    public Repartidor consultarRepartidor(String idRepartidor){
+        return repartidores.get(idRepartidor); //Null si no existe
     }
 
-    public void consultarPaquete(String id){
 
-    }
-
-    public void registrarRepartidor(){
-
-    }
-
-    public void consultarRepartidor(){
-
-    }
-
-    public void obtenerMunicipiosOrdenados(){
-
+    //Municipios ordenados alfabeticamente
+    public Set<Municipio> obtenerMunicipiosOrdenados(){
+        Set<Municipio> municipiosOrdenados = new TreeSet<>(Comparator.comparing(Enum::name));
+        municipiosOrdenados.addAll(municipios); //nose si solo retornar el treeSet
+        return municipiosOrdenados;  // Mano no se bien si hice el metodo bien osea no lo entendi muy bien
     }
 
     public void consultarPaquetesMunicipio(Municipio municipioConsultar){
@@ -133,36 +150,63 @@ public class QuindioExpress {
     }
 
     //Metodo recursivo
-    public void determinarTotalPesoPaquetes(Municipio m){
+    public double determinarTotalPesoPaquetes(List<Paquete> lista , String Municipio, int i) {
 
-    }
-
-    //Metodo recursivo
-    public void determinarNumeroPaquetePrioridadDada(){
-
-    }
-
-    //Metodo usando Divide y Venceras
-    public void organizarPaquetesCodigo(){
-
-    }
-
-    //BusquedaBinaria
-    public void buscarPaqueteCodigo(String idCodigo){
-
-    }
-
-    //Metodo usando Divide y Venceras
-    public void determinarPesoMayorPaquete(){
-
+        //Caso base
+        if (i == lista.size()) {
+            return 0.0;
+        }
+        //Sumo el peso si va a ese municipio
+        double pesoActual;
+        if (lista.get(i).getDestino().equals(Municipio)) {
+            pesoActual = lista.get(i).getPeso();
+        } else {
+            pesoActual = 0.0;
+        }
+        //Avanzo al siguiente paquete
+        return pesoActual + determinarTotalPesoPaquetes(lista, Municipio , i+1);
     }
 
 
+        //Metodo recursivo
+        public void determinarNumeroPaquetePrioridadDada () {
 
+        }
 
+        //Metodo usando Divide y Venceras
+        public void organizarPaquetesCodigo () {
 
+        }
 
+        //BusquedaBinaria
+        public void buscarPaqueteCodigo (String idCodigo){
 
+        }
 
+        //Metodo usando Divide y Venceras
+        public Paquete determinarPesoMayorPaquete (List < Paquete > lista,int izq, int der){
 
-}
+            //Caso base
+            if (izq == der) {
+                return lista.get(izq);
+            }
+
+            //Dividimos le problema en dos mitades
+            int medio = (izq + der) / 2;
+
+            //Sub problema izquierdo
+            Paquete mayorIzq = determinarPesoMayorPaquete(lista, izq, medio);
+
+            //Sub problema derecho
+            Paquete mayorDer = determinarPesoMayorPaquete(lista, medio + 1, der);
+
+            //combinamos los resultados de los sub problemas
+            if (mayorIzq.getPeso() >= mayorDer.getPeso()) {
+                return mayorIzq;
+            } else {
+                return mayorDer;
+            }
+        }
+
+    }
+

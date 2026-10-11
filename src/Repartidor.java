@@ -22,6 +22,10 @@ public class Repartidor {
         return disponible && zona == p.getDestino();
     }
 
+    public String getId() {
+        return id;
+    }
+
     public String getNombre() {
         return nombre;
     }

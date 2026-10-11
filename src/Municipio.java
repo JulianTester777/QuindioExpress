@@ -1,5 +1,9 @@
 public enum Municipio {
     ARMENIA,
     SALENTO,
-    CALARCA
+    CALARCA,
+    QUIMBAYA,
+    CIRCASIA,
+    MONTENEGRO,
+    PIJAO
 }

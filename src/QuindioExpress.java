@@ -57,6 +57,17 @@ public class QuindioExpress {
         prioridadPaquetes.offer(p);                 // despacho prioritario
     }
 
+    //Registrar repartidor
+    public void registrarRepartidor(Repartidor r){
+        if (r == null) {
+            throw new IllegalArgumentException("El repartidor no puede ser nulo");
+        }
+        if (repartidores.containsKey(r.getId())) {
+            throw new IllegalArgumentException("El repartidor con id " + r.getId() + " ya existe");
+        }
+        repartidores.put(r.getId(), r);
+    }
+
     //Municipios con 1 paquete
     public Set<Municipio> determinarMunicipiosCon1PaqueteRegistrado(){
         return municipios;
@@ -64,7 +75,22 @@ public class QuindioExpress {
 
     //Atender paquete por prioridad
     public Paquete atenderPaquetePrioridad(){
-        return prioridadPaquetes.poll();
+        Paquete p = prioridadPaquetes.poll();
+        if(p == null){
+            throw new NoSuchElementException("No hay paquetes por atender");
+        }
+        ordenRegistro.remove(p);
+        return p;
+    }
+
+    //Atender paquete por Llegada
+    public Paquete atenderPaquetePorLlegada(){
+        if(ordenRegistro.isEmpty()){
+            throw new NoSuchElementException("No hay paquetes pendientes");
+        }
+        Paquete p = ordenRegistro.remove(0);
+        prioridadPaquetes.remove(p);
+        return p;
     }
 
     //Municipios con paquetes asignados
@@ -102,36 +128,25 @@ public class QuindioExpress {
     public Paquete consultarPaquete(String id){
         return porCodigo.get(id); //Null si no existe
     }
-   //Registrar repartidor
-    public void registrarRepartidor(Repartidor r){
-        if (r == null) {
-            throw new IllegalArgumentException("El repartidor no puede ser nulo");
-        }
-        if (repartidores.containsKey(r.getId())) {
-            throw new IllegalArgumentException("El repartidor con id " + r.getId() + " ya existe");
-        }
-        repartidores.put(r.getId(), r);
-    }
+
     //Consultar repartidor por su id
     public Repartidor consultarRepartidor(String idRepartidor){
         return repartidores.get(idRepartidor); //Null si no existe
     }
 
-
     //Municipios ordenados alfabeticamente
     public Set<Municipio> obtenerMunicipiosOrdenados(){
-        Set<Municipio> municipiosOrdenados = new TreeSet<>(Comparator.comparing(Enum::name));
-        municipiosOrdenados.addAll(municipios); //nose si solo retornar el treeSet
         return municipiosOrdenados;  // Mano no se bien si hice el metodo bien osea no lo entendi muy bien
     }
 
     public void consultarPaquetesMunicipio(Municipio municipioConsultar){
-
+        List<Paquete> listPaquetes = porMunicipio.get(municipioConsultar);
+        if (listPaquetes == null){
+            throw new NoSuchElementException("No hay paquetes para el municipio " + municipioConsultar);
+        }
+        System.out.println(municipioConsultar + " -> " + listPaquetes);
     }
 
-    public void atenderPaquetePorLlegada(){
-
-    }
 
     public void verSiguientePaqueteDespacho(){
 

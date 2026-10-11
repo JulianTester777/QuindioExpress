@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45919d7e-f870-4e41-be50-6f9a4e189200" name="Changes" comment="Implementacion de varios metodos y creacion de la interfaz IColeccion y la clase ListaEnlazada que es propia">
+    <list default="true" id="45919d7e-f870-4e41-be50-6f9a4e189200" name="Changes" comment="Test Metodos&#10;test: prueba correcta de metodos de la lista &#10;creada propia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ListaEnlazadaPropia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ListaEnlazadaPropia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Municipio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Municipio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Paquete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Paquete.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/QuindioExpress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuindioExpress.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repartidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repartidor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +108,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1791655533569</updated>
-      <workItem from="1791655538251" duration="10630000" />
+      <workItem from="1791655538251" duration="10893000" />
+      <workItem from="1791758134765" duration="3916000" />
     </task>
     <task id="LOCAL-00003" summary="Creacion de los metodos basicos de la lista enlazada propia y el iterador propio">
       <option name="closed" value="true" />
@@ -128,11 +127,30 @@
       <option name="project" value="LOCAL" />
       <updated>1791664156812</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Test Metodos&#10;feauture: correccion del llamado en la declaracion de las estructuras cambiar String por el enum Municipio">
+      <option name="closed" value="true" />
+      <created>1791666444317</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1791666444317</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Modificacion de la clase nodo, poniendola estatica privada dentro de la lista simple propia para conseguir q el funcionamiento no sea visto por las demas clases" />
@@ -140,25 +158,5 @@
     <MESSAGE value="Creacion de los metodos basicos de la lista enlazada propia y el iterador propio" />
     <MESSAGE value="Test Metodos&#10;test: prueba correcta de metodos de la lista &#10;creada propia" />
     <option name="LAST_COMMIT_MESSAGE" value="Test Metodos&#10;test: prueba correcta de metodos de la lista &#10;creada propia" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Repartidor.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/Repartidor.java</url>
-          <line>28</line>
-          <properties class="Repartidor" method="getNombre">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

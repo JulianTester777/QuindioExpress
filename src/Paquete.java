@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Paquete implements Comparable<Paquete>{
+public class Paquete implements Comparable<Paquete> {
 
     private String codigo;
     private Municipio destino;
@@ -8,8 +8,8 @@ public class Paquete implements Comparable<Paquete>{
     private int prioridad;
     private int tiempoEstimado;
 
-    public Paquete(String codigo,Municipio destino, double peso, int prioridad,
-                   int tiempoEstimado){
+    public Paquete(String codigo, Municipio destino, double peso, int prioridad,
+                   int tiempoEstimado) {
         this.codigo = codigo;
         this.destino = destino;
         this.peso = peso;
@@ -19,17 +19,17 @@ public class Paquete implements Comparable<Paquete>{
     }
 
     public void setPeso(double peso) {
-        if(peso < 0) throw new ArithmeticException("El peso debe ser mayor que cero");
+        if (peso < 0) throw new ArithmeticException("El peso debe ser mayor que cero");
         this.peso = peso;
     }
 
     public void setPrioridad(int prioridad) {
-        if(prioridad < 1 || prioridad > 5 ) throw new RuntimeException("La prioridad debe estar entre ese rango");
+        if (prioridad < 1 || prioridad > 5) throw new RuntimeException("La prioridad debe estar entre ese rango");
         this.prioridad = prioridad;
     }
 
     public void setTiempoEstimado(int tiempoEstimado) {
-        if(tiempoEstimado < 0) throw new RuntimeException("El tiempo debe ser mayor que 0");
+        if (tiempoEstimado < 0) throw new RuntimeException("El tiempo debe ser mayor que 0");
         this.tiempoEstimado = tiempoEstimado;
     }
 
@@ -68,5 +68,16 @@ public class Paquete implements Comparable<Paquete>{
     @Override
     public int compareTo(Paquete o) {
         return this.codigo.compareTo(o.getCodigo());
+    }
+
+    @Override
+    public String toString() {
+        return "Paquete{" +
+                "codigo='" + codigo + '\'' +
+                ", destino=" + destino +
+                ", peso=" + peso +
+                ", prioridad=" + prioridad +
+                ", tiempoEstimado=" + tiempoEstimado +
+                '}';
     }
 }

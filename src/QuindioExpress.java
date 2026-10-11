@@ -148,8 +148,12 @@ public class QuindioExpress {
     }
 
 
-    public void verSiguientePaqueteDespacho(){
-
+    public Paquete verSiguientePaqueteDespacho(){
+        Paquete siguiente = prioridadPaquetes.peek();   // null si está vacía
+        if (siguiente == null) {
+            throw new NoSuchElementException("No hay paquetes pendientes");
+        }
+        return siguiente;
     }
 
     public void asignarPaqueteRepartidor(String idRepartidor){

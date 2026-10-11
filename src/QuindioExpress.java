@@ -156,8 +156,25 @@ public class QuindioExpress {
         return siguiente;
     }
 
-    public void asignarPaqueteRepartidor(String idRepartidor){
+    public void asignarPaqueteRepartidor(String codigoPaquete, String idRepartidor){
+        Paquete p = porCodigo.get(codigoPaquete);
+        if (p == null) {
+            throw new NoSuchElementException("No existe el paquete " + codigoPaquete);
+        }
 
+        Repartidor r = repartidores.get(idRepartidor);
+        if (r == null) {
+            throw new NoSuchElementException("No existe el repartidor " + idRepartidor);
+        }
+
+        // 1. Validar primero (disponible y zona == destino)
+        if (!r.puedeRecibirPaquete(p)) {
+            throw new IllegalStateException(
+                    "El repartidor " + idRepartidor + " no puede recibir el paquete " + codigoPaquete);
+        }
+
+        // 2. Solo después, cambiar el estado
+        r.setDisponible(false);
     }
 
     public void cambiarDisponibilidadRepartidor(String idRepartidor){

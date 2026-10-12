@@ -39,6 +39,8 @@ public class QuindioExpress {
     //Repartidores
     private final Map<String, Repartidor> repartidores = new HashMap<>();
 
+    //Asignaciones de repartidores
+    private final Map<String, Repartidor> asignaciones = new HashMap<>();
 
     //Registro de paquetes
     public void registrarPaquete(Paquete p) {
@@ -162,6 +164,10 @@ public class QuindioExpress {
             throw new NoSuchElementException("No existe el paquete " + codigoPaquete);
         }
 
+        if (asignaciones.containsKey(codigoPaquete)) {
+            throw new IllegalStateException("El paquete " + codigoPaquete + " ya fue asignado");
+        }
+
         Repartidor r = repartidores.get(idRepartidor);
         if (r == null) {
             throw new NoSuchElementException("No existe el repartidor " + idRepartidor);
@@ -175,18 +181,54 @@ public class QuindioExpress {
 
         // 2. Solo después, cambiar el estado
         r.setDisponible(false);
+        asignaciones.put(codigoPaquete,r);
     }
 
-    public void cambiarDisponibilidadRepartidor(String idRepartidor){
-
+    //Cambia la disponibilidad del repartidor
+    public void cambiarDisponibilidadRepartidor(String idRepartidor, boolean disponibilidad){
+        Repartidor r = repartidores.get(idRepartidor);
+        if(r == null){
+            throw new NoSuchElementException("No se encuentra el repartidor");
+        }
+        r.setDisponible(disponibilidad);
     }
 
-    public void RegistrarEntrega(){
+    public void RegistrarEntrega(String codigo){
+        // 1. Buscar el paquete (si no existe, no hay nada que entregar)
+        Paquete p = porCodigo.get(codigo);
+        if (p == null) {
+            throw new NoSuchElementException("No existe el paquete " + codigo);
+        }
+
+        // 2. Quitarlo de las estructuras de pendientes
+        porCodigo.remove(codigo);
+        ordenRegistro.remove(p);
+        prioridadPaquetes.remove(p);
+
+        // 3. Quitarlo de su municipio
+        Municipio destino = p.getDestino();
+        List<Paquete> delMunicipio = porMunicipio.get(destino);
+        if (delMunicipio != null) {
+            delMunicipio.remove(p);
+            if (delMunicipio.isEmpty()) {          // al municipio no le quedan pendientes
+                porMunicipio.remove(destino);
+                municipios.remove(destino);
+                municipiosOrdenados.remove(destino);
+            }
+        }
+
+        Repartidor r = asignaciones.remove(codigo);
+        if(r != null){
+            r.setDisponible(true);
+        }
+
+        // 4. Guardarlo en el historial, al final (orden de entrega)
+        historialPaquete.registrarHistorial(p);
 
     }
 
     //Metodo recursivo
-    public double determinarTotalPesoPaquetes(List<Paquete> lista , String Municipio, int i) {
+    public double determinarTotalPesoPaquetes(List<Paquete> lista , Municipio municipio, int i) {
 
         //Caso base
         if (i == lista.size()) {
@@ -194,13 +236,13 @@ public class QuindioExpress {
         }
         //Sumo el peso si va a ese municipio
         double pesoActual;
-        if (lista.get(i).getDestino().equals(Municipio)) {
+        if (lista.get(i).getDestino() == municipio) {
             pesoActual = lista.get(i).getPeso();
         } else {
             pesoActual = 0.0;
         }
         //Avanzo al siguiente paquete
-        return pesoActual + determinarTotalPesoPaquetes(lista, Municipio , i+1);
+        return pesoActual + determinarTotalPesoPaquetes(lista, municipio, i+1);
     }
 
 
@@ -220,16 +262,27 @@ public class QuindioExpress {
             }
             return actual + determinarNumeroPaquetePrioridadDada (lista, i + 1, prioridadBuscada);
 
-        }
-
-        //Metodo usando Divide y Venceras
-        public void organizarPaquetesCodigo () {
 
         }
 
         //BusquedaBinaria
-        public void buscarPaqueteCodigo (String idCodigo){
+        public Paquete buscarPaqueteCodigo (List<Paquete> ordenados, String idCodigo){
+            int izq = 0;
+            int der = ordenados.size()-1;
 
+            while(izq <= der){
+                int medio = izq + (der-izq)/2;
+                Paquete actual = ordenados.get(medio);
+                int cmp = idCodigo.compareTo(actual.getCodigo());
+                if (cmp == 0) {
+                    return actual;
+                }else if(cmp<0){
+                    der = medio-1;
+                }else {
+                    izq = medio+1;
+                }
+            }
+            throw new NoSuchElementException("No hay un paquete del codigo " + idCodigo);
         }
 
         //Metodo usando Divide y Venceras

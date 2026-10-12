@@ -1,3 +1,8 @@
+package servicio;
+
+import estructuras.ListaEnlazadaPropia;
+import modelo.Paquete;
+
 import java.util.Iterator;
 
 public class HistorialPaquete implements Iterable<Paquete> {

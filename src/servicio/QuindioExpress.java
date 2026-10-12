@@ -1,3 +1,10 @@
+package servicio;
+
+import modelo.Municipio;
+import modelo.Paquete;
+import modelo.Repartidor;
+import utils.CriteriosPaquete;
+
 import java.util.*;
 
 public class QuindioExpress {
@@ -18,7 +25,7 @@ public class QuindioExpress {
     //Necesidad 1: Orden exacto de registro de paquetes, se necesita una lista para mantener el orden de llegada
     private final List<Paquete> ordenRegistro = new ArrayList<>();
 
-    //Necesidad 2 y 7: Busqueda rapida por codigo y la asociacion codigo->Paquete, se necesita un mapa para busqueda rapida
+    //Necesidad 2 y 7: Busqueda rapida por codigo y la asociacion codigo->modelo.Paquete, se necesita un mapa para busqueda rapida
     private final Map<String, Paquete> porCodigo = new HashMap<>();
 
     //Necesidad 3: Municipios sin duplicados
@@ -227,32 +234,31 @@ public class QuindioExpress {
 
     }
 
-    //Metodo recursivo
-    public double determinarTotalPesoPaquetes(List<Paquete> lista , Municipio municipio, int i) {
-
-        //Caso base
-        if (i == lista.size()) {
-            return 0.0;
-        }
-        //Sumo el peso si va a ese municipio
-        double pesoActual;
-        if (lista.get(i).getDestino() == municipio) {
-            pesoActual = lista.get(i).getPeso();
-        } else {
-            pesoActual = 0.0;
-        }
-        //Avanzo al siguiente paquete
-        return pesoActual + determinarTotalPesoPaquetes(lista, municipio, i+1);
-    }
-
-
-        //Metodo recursivo
-        public void determinarNumeroPaquetePrioridadDada () {
-
-
+        // ---- Peso total por municipio (recursivo)
+        public double determinarTotalPesoPaquetes(Municipio m) {
+            return pesoMunicipio(ordenRegistro, m, 0);
         }
 
-        //BusquedaBinaria
+        private double pesoMunicipio(List<Paquete> lista, Municipio m, int i) {
+            if (i == lista.size()) return 0.0;                              // caso base
+            double actual = lista.get(i).getDestino() == m ? lista.get(i).getPeso() : 0.0;
+            return actual + pesoMunicipio(lista, m, i + 1);                 // caso recursivo
+        }
+
+
+        // ---- Cantidad con prioridad mínima (recursivo)
+        public int determinarNumeroPaquetePrioridadDada(int prioridadMinima) {
+            return contarPrioridad(ordenRegistro, prioridadMinima, 0);
+        }
+
+        private int contarPrioridad(List<Paquete> lista, int minima, int i) {
+            if (i == lista.size()) return 0;
+            int suma = lista.get(i).getPrioridad() >= minima ? 1 : 0;
+            return suma + contarPrioridad(lista, minima, i + 1);
+        }
+
+
+    //BusquedaBinaria
         public Paquete buscarPaqueteCodigo (List<Paquete> ordenados, String idCodigo){
             int izq = 0;
             int der = ordenados.size()-1;
@@ -272,30 +278,24 @@ public class QuindioExpress {
             throw new NoSuchElementException("No hay un paquete del codigo " + idCodigo);
         }
 
-        //Metodo usando Divide y Venceras
-        public Paquete determinarPesoMayorPaquete (List < Paquete > lista,int izq, int der){
-
-            //Caso base
-            if (izq == der) {
-                return lista.get(izq);
+        // ---- Mayor peso (divide y vencerás)
+        public Paquete determinarPesoMayorPaquete() {
+            if (ordenRegistro.isEmpty()) {
+                throw new NoSuchElementException("No hay paquetes registrados");
             }
-
-            //Dividimos le problema en dos mitades
-            int mitad = (izq + der) / 2;
-
-            //Sub problema izquierdo
-            Paquete mayorIzq = determinarPesoMayorPaquete(lista, izq, mitad);
-
-            //Sub problema derecho
-            Paquete mayorDer = determinarPesoMayorPaquete(lista, mitad + 1, der);
-
-            //combinamos los resultados de los sub problemas
-            if (mayorIzq.getPeso() >= mayorDer.getPeso()) {
-                return mayorIzq;
-            } else {
-                return mayorDer;
-            }
+            return mayorPeso(ordenRegistro, 0, ordenRegistro.size() - 1);
         }
 
+        private Paquete mayorPeso(List<Paquete> lista, int izq, int der) {
+            if (izq == der) return lista.get(izq);                          // caso base
+            int mitad = izq + (der - izq) / 2;                              // división
+            Paquete mayorIzq = mayorPeso(lista, izq, mitad);                // subproblema izquierdo
+            Paquete mayorDer = mayorPeso(lista, mitad + 1, der);            // subproblema derecho
+            return mayorIzq.getPeso() >= mayorDer.getPeso() ? mayorIzq : mayorDer;   // combinación
+        }
+
+    public HistorialPaquete getHistorialPaquete() {
+        return historialPaquete;
     }
+}
 

@@ -1,3 +1,5 @@
+package estructuras;
+
 public interface IColeccion <T> {
     void agregar(T elemento);
     boolean eliminar(T elemento);

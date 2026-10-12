@@ -1,3 +1,5 @@
+package modelo;
+
 import java.util.Objects;
 
 public class Paquete implements Comparable<Paquete> {
@@ -72,7 +74,7 @@ public class Paquete implements Comparable<Paquete> {
 
     @Override
     public String toString() {
-        return "Paquete{" +
+        return "modelo.Paquete{" +
                 "codigo='" + codigo + '\'' +
                 ", destino=" + destino +
                 ", peso=" + peso +

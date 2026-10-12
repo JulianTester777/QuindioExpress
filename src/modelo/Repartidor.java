@@ -1,3 +1,5 @@
+package modelo;
+
 public class Repartidor {
 
     private String id;
@@ -13,7 +15,7 @@ public class Repartidor {
         this.disponible = true;
 
     }
-    //Se utiliza cuando se vaya a usar en la clase QuindioExpress al asignar
+    //Se utiliza cuando se vaya a usar en la clase servicio.QuindioExpress al asignar
     // un paquete a un repartidor mirar si esta disponible o no y la zona coincide
     public boolean puedeRecibirPaquete(Paquete p){
         if (p == null) throw new IllegalArgumentException("El paquete no existe");
@@ -51,7 +53,7 @@ public class Repartidor {
 
     @Override
     public String toString() {
-        return "Repartidor{" +
+        return "modelo.Repartidor{" +
                 "id='" + id + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", zona=" + zona +

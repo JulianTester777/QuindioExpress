@@ -1,3 +1,7 @@
+package utils;
+
+import modelo.Paquete;
+
 import java.util.Comparator;
 
 public final class CriteriosPaquete {

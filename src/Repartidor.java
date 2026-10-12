@@ -1,5 +1,3 @@
-import java.util.NoSuchElementException;
-
 public class Repartidor {
 
     private String id;

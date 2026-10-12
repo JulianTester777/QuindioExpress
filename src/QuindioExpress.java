@@ -228,13 +228,13 @@ public class QuindioExpress {
             }
 
             //Dividimos le problema en dos mitades
-            int medio = (izq + der) / 2;
+            int mitad = (izq + der) / 2;
 
             //Sub problema izquierdo
-            Paquete mayorIzq = determinarPesoMayorPaquete(lista, izq, medio);
+            Paquete mayorIzq = determinarPesoMayorPaquete(lista, izq, mitad);
 
             //Sub problema derecho
-            Paquete mayorDer = determinarPesoMayorPaquete(lista, medio + 1, der);
+            Paquete mayorDer = determinarPesoMayorPaquete(lista, mitad + 1, der);
 
             //combinamos los resultados de los sub problemas
             if (mayorIzq.getPeso() >= mayorDer.getPeso()) {

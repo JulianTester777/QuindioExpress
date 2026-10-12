@@ -205,7 +205,20 @@ public class QuindioExpress {
 
 
         //Metodo recursivo
-        public void determinarNumeroPaquetePrioridadDada () {
+        public int determinarNumeroPaquetePrioridadDada(List<Paquete> lista,int i, int prioridadBuscada ){
+
+           //Caso base
+            if(i == lista.size()){
+                return 0;
+            }
+            //Caso recursivo
+            int actual;
+            if (lista.get(i).getPrioridad() >= prioridadBuscada) {
+                actual = 1;
+            } else {
+                actual = 0;
+            }
+            return actual + determinarNumeroPaquetePrioridadDada (lista, i + 1, prioridadBuscada);
 
         }
 

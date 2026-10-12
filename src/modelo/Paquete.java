@@ -74,12 +74,6 @@ public class Paquete implements Comparable<Paquete> {
 
     @Override
     public String toString() {
-        return "modelo.Paquete{" +
-                "codigo='" + codigo + '\'' +
-                ", destino=" + destino +
-                ", peso=" + peso +
-                ", prioridad=" + prioridad +
-                ", tiempoEstimado=" + tiempoEstimado +
-                '}';
+        return codigo + " | " + destino + " | " + peso + " kg | prio " + prioridad + " | " + tiempoEstimado + " min \n";
     }
 }

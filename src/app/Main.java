@@ -42,6 +42,7 @@ public class Main {
         System.out.println("Ordenados   : " + sistema.obtenerMunicipiosOrdenados());
         sistema.consultarPaquetesMunicipio(Municipio.ARMENIA);
         sistema.consultarPaquetesMunicipio(Municipio.PIJAO);
+        sistema.consultarPaquetesMunicipio(Municipio.CIRCASIA);
 
         // ------------------------------------------------------------------ 5
         titulo("5. ORDENAMIENTOS (copias; no alteran el orden de llegada)");

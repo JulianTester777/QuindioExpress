@@ -11,14 +11,21 @@ QuindioExpress una empresa que presta servicios de recepcion,clasificacion y dis
 El proyecto demuestra el uso de las colecciones del Java Collections Framework, una lista enlazada propia, recursividad, búsqueda binaria y divide y venceras
 
 Estructura del proyecto 
+
 Quisimos organizarla asi porq tratamos de modularizar las clases y que no viera desorganizado
 
 
-Main.java    # Punto de entrada
+Main.java    
+# Punto de entrada
 
 estructuras
-IColeccion.java           # Interfaz genérica de colección
-ListaEnlazadaPropia.java  # Lista enlazada propia (genérica, Iterable)
+
+IColeccion.java        
+# Interfaz genérica de colección
+
+ListaEnlazadaPropia.java  
+
+# Lista enlazada propia (genérica, Iterable)
 
 modelo
 Municipio.java            # Enum de municipios destino

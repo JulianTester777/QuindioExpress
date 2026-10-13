@@ -47,10 +47,10 @@ public final class CargarDatos {
         s.registrarPaquete(new Paquete("PQ196", Municipio.SALENTO, 6.1, 3, 29));
         s.registrarPaquete(new Paquete("PQ774", Municipio.CIRCASIA, 2.2, 2, 52));
         s.registrarPaquete(new Paquete("PQ338", Municipio.QUIMBAYA, 11.7, 4, 31));
-        s.registrarPaquete(new Paquete("PQ691", Municipio.MONTENEGRO, 3.6, 1, 44));
+        s.registrarPaquete(new Paquete("PQ691", Municipio.MONTENEGRO, 3.6, 7, 44));
         s.registrarPaquete(new Paquete("PQ450", Municipio.PIJAO, 7.9, 5, 21));
-        s.registrarPaquete(new Paquete("PQ927", Municipio.CALARCA, 4.8, 2, 36));
-        s.registrarPaquete(new Paquete("PQ583", Municipio.ARMENIA, 9.3, 3, 24));
+        s.registrarPaquete(new Paquete("PQ927", Municipio.CALARCA, 4.8, 8, 36));
+        s.registrarPaquete(new Paquete("PQ583", Municipio.ARMENIA, 9.3, 6, 24));
         s.registrarPaquete(new Paquete("PQ162", Municipio.SALENTO, 14.5, 5, 19));
         s.registrarPaquete(new Paquete("PQ806", Municipio.CIRCASIA, 1.1, 4, 41));
         s.registrarPaquete(new Paquete("PQ299", Municipio.QUIMBAYA, 5.9, 3, 27));

@@ -15,6 +15,7 @@ public class Main {
         QuindioExpress sistema = new QuindioExpress("QuindioExpress");
 
         // ------------------------------------------------------------------ 1
+
         titulo("1. CARGA DE DATOS");
         long inicio = System.nanoTime();
         CargarDatos.cargarTodo(sistema);
@@ -28,6 +29,14 @@ public class Main {
                 () -> new Paquete("PQ999", Municipio.ARMENIA, -2.0, 5, 10));
         intentar("Registrar un repartidor con id repetido (R01)",
                 () -> sistema.registrarRepartidor(new Repartidor("R01", "Otro", Municipio.SALENTO, true)));
+
+        // Pruebas en el Main
+        titulo("2. VALIDACIONES Y VALORES POR DEFECTO");
+
+        // Crear un paquete usando el constructor de 4 parámetros (sin prioridad)
+        Paquete paqueteDefecto = new Paquete("PQ998", Municipio.ARMENIA, 5.0, 15);
+        System.out.println("Paquete con prioridad por defecto -> " + paqueteDefecto);
+        System.out.println("Prioridad asignada automáticamente : " + paqueteDefecto.getPrioridad());
 
         // ------------------------------------------------------------------ 3
         titulo("3. CONSULTAS POR CÓDIGO (HashMap)");

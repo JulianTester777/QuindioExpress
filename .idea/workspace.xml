@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45919d7e-f870-4e41-be50-6f9a4e189200" name="Changes" comment="feature: Finalizacion de la clase main y demas comprobaciones de demora respecto a diferentes estructuras">
+    <list default="true" id="45919d7e-f870-4e41-be50-6f9a4e189200" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modelo/Paquete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modelo/Paquete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/CargarDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/CargarDatos.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +50,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Run",
+    "Application.Main.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
@@ -111,7 +112,8 @@
       <workItem from="1791655538251" duration="10893000" />
       <workItem from="1791758134765" duration="4340000" />
       <workItem from="1791833104105" duration="9080000" />
-      <workItem from="1791846355659" duration="1242000" />
+      <workItem from="1791846355659" duration="2668000" />
+      <workItem from="1791849934781" duration="1034000" />
     </task>
     <task id="LOCAL-00003" summary="Creacion de los metodos basicos de la lista enlazada propia y el iterador propio">
       <option name="closed" value="true" />
@@ -177,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1791842219711</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feature: Finalizacion de la clase main y demas comprobaciones de demora respecto a diferentes estructuras">
+      <option name="closed" value="true" />
+      <created>1791847767335</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1791847767335</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

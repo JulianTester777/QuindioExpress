@@ -7,7 +7,7 @@ public class Paquete implements Comparable<Paquete> {
     private String codigo;
     private Municipio destino;
     private double peso;
-    private int prioridad;
+    private int prioridad ;
     private int tiempoEstimado;
 
     public Paquete(String codigo, Municipio destino, double peso, int prioridad,
@@ -19,6 +19,10 @@ public class Paquete implements Comparable<Paquete> {
         this.tiempoEstimado = tiempoEstimado;
 
     }
+    public Paquete(String codigo, Municipio destino, double peso,
+                   int tiempoEstimado) {
+        this(codigo,destino,peso,5,tiempoEstimado);
+    }
 
     public void setPeso(double peso) {
         if (peso < 0) throw new ArithmeticException("El peso debe ser mayor que cero");
@@ -26,7 +30,7 @@ public class Paquete implements Comparable<Paquete> {
     }
 
     public void setPrioridad(int prioridad) {
-        if (prioridad < 1 || prioridad > 5) throw new RuntimeException("La prioridad debe estar entre ese rango");
+        if (prioridad < 1 || prioridad > 10) throw new RuntimeException("La prioridad debe estar entre ese rango");
         this.prioridad = prioridad;
     }
 
